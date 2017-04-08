@@ -57,3 +57,8 @@ for (file in files_tar) {
     left_join(`paste0(df_name)`,by = c(`paste0(df_name)` = "id")) %>% 
     select(-`paste0(df_name)`,`paste0(df_name)` = `paste0(df_name,".y")`)
 }  
+
+
+#### spark stuff ####
+# Create Spark connection and read data
+sc = spark_connect(master="local", version="2.0.2")
